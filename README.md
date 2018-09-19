@@ -4,6 +4,8 @@ A lightweight scraping class with selenium and binary file download support
 
 ## Usage:
 
+In Terminal:
+
 `python core.py --config config_file_path`
 
 e.g
@@ -11,6 +13,15 @@ e.g
 `python core.py --config configs/reddit.json`
 
 assuming you're executing within this directory.
+
+---
+
+Importing:
+
+    from core import Scraper
+    
+    sc = Scraper(config_file_path)
+    result = sc.run() # result should contain pandas dataframes/ dictionary depending how you set config.
 
 ## Restructuring
 
