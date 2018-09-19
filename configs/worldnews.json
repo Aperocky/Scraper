@@ -1,0 +1,69 @@
+{
+	"selenium": false,
+	"url": {
+		"http://old.reddit.com/r/worldnews" : "Worldnews",
+		"https://old.reddit.com/r/worldnews/?count=25": "Worldnews",
+		"https://old.reddit.com/r/worldnews/?count=50": "Worldnews",
+		"https://old.reddit.com/r/worldnews/?count=75": "Worldnews",
+		"https://old.reddit.com/r/worldnews/?count=100": "Worldnews",
+		"https://old.reddit.com/r/worldnews/?count=125": "Worldnews",
+		"https://old.reddit.com/r/worldnews/?count=150": "Worldnews",
+		"https://old.reddit.com/r/worldnews/?count=175": "Worldnews",
+		"https://old.reddit.com/r/worldnews/?count=200": "Worldnews"
+	},
+	"sleep_time": null,
+	"jsaction": null,
+	"css_nested": {
+		"div.thing": {
+			"name": "entree",
+			"child": {
+					"p.title > a.title": {
+						"name": "title",
+						"child": {},
+						"rule": "text"
+					},
+					".score.unvoted": {
+						"name": "score",
+						"child": {},
+						"rule": "text"
+					},
+					".tagline > a.author": {
+						"name": "author",
+						"child": {},
+						"rule": "text"
+					},
+					".tagline > time": {
+						"name": "time",
+						"child": {},
+						"rule": "title"
+					},
+					".title > span.domain > a": {
+						"name": "source",
+						"child": {},
+						"rule": "text"
+					}
+				},
+			"rule": "none"
+		}
+	},
+	"parse": [
+		{
+			"Worldnews": {
+				"entree": [
+					"title",
+					"score",
+					"author",
+					"time",
+					"source"
+				]
+			}
+		}
+	],
+	"save": true,
+	"datadir": "/Users/aperocky/workspace/Personal/skraper/data",
+	"savedir": "worldnews",
+	"datestr": "%m-%d-%Y",
+	"table_names": [
+		"worldnews"
+	]
+}

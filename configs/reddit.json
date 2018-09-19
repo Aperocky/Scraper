@@ -1,0 +1,110 @@
+{
+	"selenium": false,
+	"url": {
+		"http://old.reddit.com/r/worldnews" : "Worldnews",
+		"http://old.reddit.com/r/news" : "News",
+		"http://old.reddit.com/r/python": "Python",
+		"http://old.reddit.com/r/programming": "Programming",
+		"http://old.reddit.com/r/talesfromtechsupport": "TFTS"
+	},
+	"sleep_time": null,
+	"jsaction": null,
+	"css_nested": {
+		"div.thing": {
+			"name": "entree",
+			"child": {
+					"p.title > a.title": {
+						"name": "title",
+						"child": {},
+						"rule": "text"
+					},
+					".score.unvoted": {
+						"name": "score",
+						"child": {},
+						"rule": "text"
+					},
+					".tagline > a.author": {
+						"name": "author",
+						"child": {},
+						"rule": "text"
+					},
+					".tagline > time": {
+						"name": "time",
+						"child": {},
+						"rule": "title"
+					},
+					".title > span.domain > a": {
+						"name": "source",
+						"child": {},
+						"rule": "text"
+					}
+				},
+			"rule": "none"
+		}
+	},
+	"parse": [
+		{
+			"Worldnews": {
+				"entree": [
+					"title",
+					"score",
+					"author",
+					"time",
+					"source"
+				]
+			}
+		},
+		{
+			"News": {
+				"entree": [
+					"title",
+					"score",
+					"author",
+					"time",
+					"source"
+				]
+			}
+		},
+		{
+			"Python": {
+				"entree": [
+					"title",
+					"score",
+					"author",
+					"time"
+				]
+			}
+		},
+		{
+			"Programming": {
+				"entree": [
+					"title",
+					"score",
+					"author",
+					"time"
+				]
+			}
+		},
+		{
+			"TFTS": {
+				"entree": [
+					"title",
+					"score",
+					"author",
+					"time"
+				]
+			}
+		}
+	],
+	"save": true,
+	"datadir": "/Users/aperocky/workspace/Personal/skraper/data",
+	"savedir": "reddit",
+	"datestr": "%m-%d-%Y",
+	"table_names": [
+		"worldnews",
+		"news",
+		"python",
+		"programming",
+		"TFTS"
+	]
+}
