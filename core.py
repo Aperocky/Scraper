@@ -77,6 +77,7 @@ class Scraper():
         for url, site in self.urls.items():
             if site not in master:
                 master[site] = {}
+            print("Crawling {}".format(url))
             soup = self._crawl(url)
             self._nested(soup, master[site])
         return master
@@ -91,33 +92,41 @@ class Scraper():
         name = val["name"]
         rule = val["rule"]
         child = val["child"]
+        multi = val.get("multi")
+        subname = val.get("subname")
         if name not in book:
             if len(child) > 0:
                 book[name] = {}
-                if rule != "none":
-                    book[name]["List"] = []
+                if rule != "none" and subname is not None:
+                    book[name][subname] = []
             else:
                 book[name] = []
         # Get Master level soup
-        soups = soup.select(key)
+        soups = soup.select(selector)
         # Check for empty, if empty, always return.
         if len(soups) == 0:
             if len(child) == 0:
                 book[name].append("")
             else:
-                book[name]["List"].append("")
+                if rule != "none" and subname is not None:
+                    book[name][subname].append("")
             return
         # Recursion starts here
         if len(child) > 0:
             for each in soups:
-                if rule != "none":
+                if rule != "none" and subname is not None:
                     text = self._get_rule(each, rule)
-                    book[name]["List"].append(text)
+                    book[name][subname].append(text)
                 for k, v in child.items():
                     self._nested_proc(k, v, each, book[name])
         else:
-            text = self._get_rule(soups[0], rule)
-            book[name].append(text)
+            if multi is None:
+                text = self._get_rule(soups[0], rule)
+                book[name].append(text)
+            else:
+                for each in soups:
+                    text = self._get_rule(each, rule)
+                    book[name].append(text)
 
     def _get_rule(self, soup, rule):
         if rule == "text":
@@ -128,6 +137,7 @@ class Scraper():
     def _parse_result(self, master):
         parser = self.parser_config
         master_table = []
+        print("Parsing Master Dictionary.. ")
         for each in parser:
             dummy = each.copy()
             dammy = master.copy()
@@ -156,7 +166,7 @@ class Scraper():
                 if self.savedir is None:
                     raise ValueError("No save folder name specified")
                 if self.datestr is None:
-                    raise ValueError("No timestamp format information specified")
+                    self.datestr = ""
                 datestr = datetime.strftime(datetime.now(), self.datestr)
                 dirname = "{}_{}".format(self.savedir, datestr)
                 try:

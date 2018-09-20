@@ -1,0 +1,87 @@
+{
+	"selenium": false,
+	"url": {
+		"https://www.nhc.noaa.gov/archive/2018": "Storm",
+		"https://www.nhc.noaa.gov/archive/2017": "Storm",
+		"https://www.nhc.noaa.gov/archive/2016": "Storm",
+		"https://www.nhc.noaa.gov/archive/2015": "Storm",
+		"https://www.nhc.noaa.gov/archive/2014": "Storm",
+		"https://www.nhc.noaa.gov/archive/2013": "Storm",
+		"https://www.nhc.noaa.gov/archive/2012": "Storm",
+		"https://www.nhc.noaa.gov/archive/2011": "Storm",
+		"https://www.nhc.noaa.gov/archive/2010": "Storm",
+		"https://www.nhc.noaa.gov/archive/2009": "Storm",
+		"https://www.nhc.noaa.gov/archive/2008": "Storm",
+		"https://www.nhc.noaa.gov/archive/2007": "Storm",
+		"https://www.nhc.noaa.gov/archive/2006": "Storm",
+		"https://www.nhc.noaa.gov/archive/2005": "Storm",
+		"https://www.nhc.noaa.gov/archive/2004": "Storm",
+		"https://www.nhc.noaa.gov/archive/2003": "Storm",
+		"https://www.nhc.noaa.gov/archive/2002": "Storm"
+	},
+	"sleep_time": null,
+	"jsaction": null,
+	"css_nested": {
+		"td[headers=\"al\"]": {
+			"name": "Atlantic",
+			"child": {
+				"a": {
+					"name": "storm_name",
+					"child": {},
+					"rule": "text",
+					"multi": true
+				},
+				"a ": {
+					"name": "link",
+					"child": {},
+					"rule": "href",
+					"multi": true
+				}
+			},
+			"rule": "none"
+		},
+		"td[headers=\"ep\"]": {
+			"name": "Pacific",
+			"child": {
+				"a": {
+					"name": "storm_name",
+					"child": {},
+					"rule": "text",
+					"multi": true
+				},
+				"a ": {
+					"name": "link",
+					"child": {},
+					"rule": "href",
+					"multi": true
+				}
+			},
+			"rule": "none"
+		}
+	},
+	"parse": [
+		{
+			"Storm": {
+				"Atlantic": [
+					"storm_name",
+					"link"
+				]
+			}
+		},
+		{
+			"Storm": {
+				"Pacific": [
+					"storm_name",
+					"link"
+				]
+			}
+		}
+	],
+	"save": true,
+	"datadir": "/Users/aperocky/workspace/Personal/skraper/data",
+	"savedir": "Storm",
+	"table_names": [
+		"atlantic_hurricanes",
+		"pacific_hurricanes"
+	]
+}

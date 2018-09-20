@@ -37,9 +37,25 @@
 						"name": "source",
 						"child": {},
 						"rule": "text"
+					},
+					".flat-list > .first > a": {
+						"name": "comments",
+						"child": {},
+						"rule": "text"
+					},
+					".flat-list > li.first > a": {
+						"name": "comments_link",
+						"child": {},
+						"rule": "href"
+					},
+					".top-matter > .title > a.title": {
+						"name": "news_link",
+						"child": {},
+						"rule": "href"
 					}
 				},
-			"rule": "none"
+			"rule": "id",
+			"subname": "ID"
 		}
 	},
 	"parse": [
@@ -50,7 +66,11 @@
 					"score",
 					"author",
 					"time",
-					"source"
+					"source",
+					"comments",
+					"comments_link",
+					"news_link",
+					"ID"
 				]
 			}
 		},
@@ -61,7 +81,11 @@
 					"score",
 					"author",
 					"time",
-					"source"
+					"source",
+					"comments",
+					"comments_link",
+					"news_link",
+					"ID"
 				]
 			}
 		},
@@ -71,7 +95,9 @@
 					"title",
 					"score",
 					"author",
-					"time"
+					"time",
+					"comments",
+					"comments_link"
 				]
 			}
 		},
@@ -81,7 +107,9 @@
 					"title",
 					"score",
 					"author",
-					"time"
+					"time",
+					"comments",
+					"comments_link"
 				]
 			}
 		},
@@ -91,7 +119,10 @@
 					"title",
 					"score",
 					"author",
-					"time"
+					"time",
+					"comments",
+					"comments_link",
+					"ID"
 				]
 			}
 		}

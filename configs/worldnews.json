@@ -1,15 +1,7 @@
 {
 	"selenium": false,
 	"url": {
-		"http://old.reddit.com/r/worldnews" : "Worldnews",
-		"https://old.reddit.com/r/worldnews/?count=25": "Worldnews",
-		"https://old.reddit.com/r/worldnews/?count=50": "Worldnews",
-		"https://old.reddit.com/r/worldnews/?count=75": "Worldnews",
-		"https://old.reddit.com/r/worldnews/?count=100": "Worldnews",
-		"https://old.reddit.com/r/worldnews/?count=125": "Worldnews",
-		"https://old.reddit.com/r/worldnews/?count=150": "Worldnews",
-		"https://old.reddit.com/r/worldnews/?count=175": "Worldnews",
-		"https://old.reddit.com/r/worldnews/?count=200": "Worldnews"
+		"http://old.reddit.com/r/worldnews" : "Worldnews"
 	},
 	"sleep_time": null,
 	"jsaction": null,
@@ -41,9 +33,25 @@
 						"name": "source",
 						"child": {},
 						"rule": "text"
+					},
+					".flat-list > .first > a": {
+						"name": "comments",
+						"child": {},
+						"rule": "text"
+					},
+					".flat-list > li.first > a": {
+						"name": "comments_link",
+						"child": {},
+						"rule": "href"
+					},
+					".top-matter > .title > a.title": {
+						"name": "news_link",
+						"child": {},
+						"rule": "href"
 					}
 				},
-			"rule": "none"
+			"rule": "id",
+			"subname": "ID"
 		}
 	},
 	"parse": [
@@ -54,7 +62,9 @@
 					"score",
 					"author",
 					"time",
-					"source"
+					"source",
+					"comments",
+					"ID"
 				]
 			}
 		}
