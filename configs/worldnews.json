@@ -1,79 +1,79 @@
 {
-	"selenium": false,
-	"url": {
-		"http://old.reddit.com/r/worldnews" : "Worldnews"
-	},
-	"sleep_time": null,
-	"jsaction": null,
-	"css_nested": {
-		"div.thing": {
-			"name": "entree",
-			"child": {
-					"p.title > a.title": {
-						"name": "title",
-						"child": {},
-						"rule": "text"
-					},
-					".score.unvoted": {
-						"name": "score",
-						"child": {},
-						"rule": "text"
-					},
-					".tagline > a.author": {
-						"name": "author",
-						"child": {},
-						"rule": "text"
-					},
-					".tagline > time": {
-						"name": "time",
-						"child": {},
-						"rule": "title"
-					},
-					".title > span.domain > a": {
-						"name": "source",
-						"child": {},
-						"rule": "text"
-					},
-					".flat-list > .first > a": {
-						"name": "comments",
-						"child": {},
-						"rule": "text"
-					},
-					".flat-list > li.first > a": {
-						"name": "comments_link",
-						"child": {},
-						"rule": "href"
-					},
-					".top-matter > .title > a.title": {
-						"name": "news_link",
-						"child": {},
-						"rule": "href"
-					}
-				},
-			"rule": "id",
-			"subname": "ID"
-		}
-	},
-	"parse": [
-		{
-			"Worldnews": {
-				"entree": [
-					"title",
-					"score",
-					"author",
-					"time",
-					"source",
-					"comments",
-					"ID"
-				]
-			}
-		}
-	],
-	"save": true,
-	"datadir": "/Users/aperocky/workspace/Personal/skraper/data",
-	"savedir": "worldnews",
-	"datestr": "%m-%d-%Y",
-	"table_names": [
-		"worldnews"
-	]
+  "selenium": false,
+  "url": {
+    "http://old.reddit.com/r/worldnews" : "Worldnews"
+  },
+  "sleep_time": null,
+  "jsaction": null,
+  "css_nested": {
+    "div.thing": {
+      "name": "entree",
+      "child": {
+          "p.title > a.title": {
+            "name": "title",
+            "child": {},
+            "rule": "text"
+          },
+          ".score.unvoted": {
+            "name": "score",
+            "child": {},
+            "rule": "text"
+          },
+          ".tagline > a.author": {
+            "name": "author",
+            "child": {},
+            "rule": "text"
+          },
+          ".tagline > time": {
+            "name": "time",
+            "child": {},
+            "rule": "title"
+          },
+          ".title > span.domain > a": {
+            "name": "source",
+            "child": {},
+            "rule": "text"
+          },
+          ".flat-list > .first > a": {
+            "name": "comments",
+            "child": {},
+            "rule": "text"
+          },
+          ".flat-list > li.first > a": {
+            "name": "comments_link",
+            "child": {},
+            "rule": "href"
+          },
+          ".top-matter > .title > a.title": {
+            "name": "news_link",
+            "child": {},
+            "rule": "href"
+          }
+        },
+      "rule": "id",
+      "subname": "ID"
+    }
+  },
+  "parse": [
+    {
+      "Worldnews": {
+        "entree": [
+          "title",
+          "score",
+          "author",
+          "time",
+          "source",
+          "comments",
+          "ID"
+        ]
+      }
+    }
+  ],
+  "save": true,
+  "datadir": "/Users/aperocky/workspace/data",
+  "savedir": "worldnews",
+  "datestr": "%m-%d-%Y",
+  "table_names": [
+    "worldnews"
+  ]
 }
