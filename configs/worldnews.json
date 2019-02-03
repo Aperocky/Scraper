@@ -1,10 +1,7 @@
 {
-  "selenium": false,
   "url": {
     "http://old.reddit.com/r/worldnews" : "Worldnews"
   },
-  "sleep_time": null,
-  "jsaction": null,
   "css_nested": {
     "div.thing": {
       "name": "entree",
@@ -68,12 +65,5 @@
         ]
       }
     }
-  ],
-  "save": true,
-  "datadir": "/Users/aperocky/workspace/data",
-  "savedir": "worldnews",
-  "datestr": "%m-%d-%Y",
-  "table_names": [
-    "worldnews"
   ]
 }
