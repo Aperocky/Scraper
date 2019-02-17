@@ -139,4 +139,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     sk = Scraper(args.config)
     master = sk.run()
-    print(master) # Only for verifying that it works.
+    print(master)
