@@ -1,5 +1,4 @@
 {
-	"selenium": false,
 	"url": {
 		"http://old.reddit.com/r/worldnews" : "Worldnews",
 		"http://old.reddit.com/r/news" : "News",
@@ -7,8 +6,6 @@
 		"http://old.reddit.com/r/programming": "Programming",
 		"http://old.reddit.com/r/talesfromtechsupport": "TFTS"
 	},
-	"sleep_time": null,
-	"jsaction": null,
 	"css_nested": {
 		"div.thing": {
 			"name": "entree",

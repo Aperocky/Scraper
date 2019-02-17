@@ -2,26 +2,17 @@
 
 A lightweight scraping class with selenium and binary file download support
 
+The core class output dataframe based on set of rule specified in the config.json files.
+
+selenium_core extend core class functionality by adding selenium (read: JavaScript) support to this scraper.
+
 ## Usage:
 
-In Terminal:
-
-`python core.py --config config_file_path`
-
-e.g
-
-`python core.py --config configs/reddit.json`
-
-assuming you're executing within this directory.
-
----
-
-Importing:
-
     from core import Scraper
-    
-    sc = Scraper(config_file_path)
-    result = sc.run() # result should contain pandas dataframes/ dictionary depending how you set config.
+    from selenium_core import SeleniumScraper
+
+    sc = Scraper(config_file_path) # Or SeleniumScraper
+    result = sc.run() # result is a list of pandas dataframe.
 
 ## Restructuring
 
@@ -39,4 +30,4 @@ In the config, there are options to save to csv, The `example_data` directory co
 
 ## Old Project
 
-The old project still exist in the `old/` directory. 
+The old project still exist in the `old/` directory.

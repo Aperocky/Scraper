@@ -1,5 +1,4 @@
 {
-	"selenium": false,
 	"url": {
 		"https://www.nhc.noaa.gov/archive/2018": "Storm",
 		"https://www.nhc.noaa.gov/archive/2017": "Storm",
@@ -19,8 +18,6 @@
 		"https://www.nhc.noaa.gov/archive/2003": "Storm",
 		"https://www.nhc.noaa.gov/archive/2002": "Storm"
 	},
-	"sleep_time": null,
-	"jsaction": null,
 	"css_nested": {
 		"td[headers=\"al\"]": {
 			"name": "Atlantic",
